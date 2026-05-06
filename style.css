@@ -49,7 +49,7 @@ header {
 }
 
 /* Footer */
-.home-page .footer {
+.footer {
     position: relative;
     z-index: 1;
 
@@ -148,13 +148,27 @@ header {
 }
 
     /* Events.html Styling */
+.events-page h1 {
+    color: white;
+}
+
+.events-page .hero-content .btn{
+    text-decoration: none;
+    color: gray;
+}
+
 .events-page .hero {
-    display: flex;
-    align-items: center;
-    padding: 20px;
+    padding: 20px 40px;
+    width: 100%;
     height: 100vh;
-    padding-top: 140px;
+
+    color: gray;
+
     position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .events-page .hero .hero-content {
@@ -162,27 +176,29 @@ header {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 40px;
     position: relative;
     z-index: 1;
+    top: 80px;
 }
 
-.events-page .hero .hero-content .date-times-wrapper {
+.events-page .date-times-wrapper {
+    width: 500px;
     display: flex;
-    gap: 80px;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
 }
 
-
-
-.hero::before {
+.events-page .hero::before {
     content: "";
     position: absolute;
     inset: 0;
 
-    background-image: url(https://images.pexels.com/photos/761543/pexels-photo-761543.jpeg);
+
     background-size: cover;
     background-position: center;
 
+    background-image: url(https://www.mixonline.com/wp-content/uploads/2023/11/2023-11-29-meyer1.jpg);
     filter: grayscale(100%);
     z-index: 0;
 }
@@ -194,3 +210,19 @@ header {
     background: rgba(0,0,0,0.4);
 }
 
+.events-page .date-times {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    top: 40px;
+}
+
+.date-times:hover .date,
+.date-times:hover .time {
+    color: white;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.events-page .btn-container .btn:hover {
+    color: #E8A020;
+}
