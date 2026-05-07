@@ -1,17 +1,21 @@
-/* Global Styling */
+/* =========================
+   GLOBAL RESET
+========================= */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-/* Header + Navigation */
+/* =========================
+   NAVIGATION (ALL PAGES)
+========================= */
 header {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 10;
-    padding: 40px;
+    padding: 40px 60px;
 }
 
 .main-nav {
@@ -20,12 +24,15 @@ header {
     align-items: center;
 }
 
-.main-nav .logo {
+.main-nav .logo,
+.main-nav ul li a {
     text-decoration: none;
     color: white;
+    transition: color 0.3s ease;
 }
 
-.main-nav .logo:hover {
+.main-nav .logo:hover,
+.main-nav ul li a:hover {
     color: #E8A020;
 }
 
@@ -39,56 +46,44 @@ header {
     list-style: none;
 }
 
-.main-nav ul li a {
-    text-decoration: none;
-    color: white;
-}
-
-.main-nav ul li a:hover {
-    color: #E8A020;
-}
-
-/* Footer */
+/* =========================
+   FOOTER (ALL PAGES)
+========================= */
 .footer {
-    position: relative;
-    z-index: 1;
-
     text-align: center;
     padding: 20px;
     color: white;
+    position: relative;
+    z-index: 1;
 }
 
-    /* Index.html Styling */
-
-.home-page .hero {
-    padding: 20px 40px;
+/* =========================
+   HERO BASE (ALL PAGES)
+========================= */
+.hero {
+    padding: 20px 60px;
     width: 100%;
     height: 100vh;
 
-    background-image: url(https://media.cnn.com/api/v1/images/stellar/prod/230126163353-01-john-mayer-announces-acoustic-tour.jpg?c=16x9&q=h_653,w_1160,c_fill/f_avif);
-    background-size: cover;
-    background-position: center;
-
-    color: white;
-
     position: relative;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    color: white;
 }
 
-.home-page .hero::before {
+/* Dark overlay (ALL PAGES) */
+.hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: black;
-    opacity: 0.5;
+    background: rgba(0,0,0,0.6);
     z-index: 0;
 }
 
-/* Hero content */
-.home-page .hero-content {
+/* Hero content (ALL PAGES) */
+.hero-content {
     position: relative;
     z-index: 1;
 
@@ -96,16 +91,128 @@ header {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    top: 40px;
 
     margin: auto 0;
-    top: 50px
 }
 
-.hero-content p {
-    font-size: 1.1em;
+/* =========================
+   HOME PAGE
+========================= */
+.home-page .hero {
+    background-image: url(https://media.cnn.com/api/v1/images/stellar/prod/230126163353-01-john-mayer-announces-acoustic-tour.jpg?c=16x9&q=h_653,w_1160,c_fill/f_avif);
+    background-size: cover;
+    background-position: center;
 }
 
-/* Button */
+/* =========================
+   EVENTS PAGE
+========================= */
+.events-page .hero {
+    background-image: url(https://cloudfront-us-east-1.images.arcpublishing.com/advancelocal/IITWWUKWVRBXLANVBY2Z54MR5I.JPG);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Events layout */
+.events-page .date-times-wrapper {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    color: rgb(185, 185, 185);
+}
+
+.events-page .date-times-wrapper a {
+    color: gray;
+    text-decoration: none;
+}
+
+.events-page .date-times {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.date-times:hover .date,
+.date-times:hover .time {
+    color: white;
+}
+
+/* Button hover */
+.events-page .btn-container .btn:hover {
+    color: white;
+}
+
+/* =========================
+   ABOUT PAGE
+========================= */
+.about-page .hero {
+    background-color: #111;
+    background-image: url(https://www.mercurynews.com/wp-content/uploads/2019/10/BNG-L-WARFANS-1006-38.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.about-page .hero .hero-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-page .hero .hero-content .main-text {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    height: 250px;
+    line-height: 30px;
+    gap: 40px;
+}
+
+.form h2 {
+  margin-bottom: 10px;
+  color: white;
+}
+
+.form {
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: white;
+  width: 100%;
+  max-width: 500px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+}
+
+.about-page .btn {
+  padding: 12px;
+  background: #E8A020;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* =========================
+   BUTTON (GLOBAL)
+========================= */
 .boton-elegante {
     padding: 15px 30px;
     border: 2px solid #2c2c2c;
@@ -115,7 +222,6 @@ header {
     cursor: pointer;
     border-radius: 30px;
     transition: all 0.4s ease;
-    outline: none;
     position: relative;
     overflow: hidden;
     font-weight: bold;
@@ -125,10 +231,7 @@ header {
 .boton-elegante::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: radial-gradient(
         circle,
         rgba(255, 255, 255, 0.25) 0%,
@@ -145,84 +248,4 @@ header {
 .boton-elegante:hover {
     border-color: #666666;
     background: #292929;
-}
-
-    /* Events.html Styling */
-.events-page h1 {
-    color: white;
-}
-
-.events-page .hero-content .btn{
-    text-decoration: none;
-    color: gray;
-}
-
-.events-page .hero {
-    padding: 20px 40px;
-    width: 100%;
-    height: 100vh;
-
-    color: gray;
-
-    position: relative;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.events-page .hero .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    position: relative;
-    z-index: 1;
-    top: 80px;
-}
-
-.events-page .date-times-wrapper {
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    gap: 20px;
-}
-
-.events-page .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-
-    background-size: cover;
-    background-position: center;
-
-    background-image: url(https://www.mixonline.com/wp-content/uploads/2023/11/2023-11-29-meyer1.jpg);
-    filter: grayscale(100%);
-    z-index: 0;
-}
-
-.hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
-}
-
-.events-page .date-times {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 20px;
-    top: 40px;
-}
-
-.date-times:hover .date,
-.date-times:hover .time {
-    color: white;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
-}
-
-.events-page .btn-container .btn:hover {
-    color: #E8A020;
 }
